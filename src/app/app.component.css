@@ -1,0 +1,17 @@
+.nav {
+  width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::ng-deep.p-button-icon-left,
+.none {
+  display: none;
+}
+
+.mr {
+  margin-right: 10px;
+}

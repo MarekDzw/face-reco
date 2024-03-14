@@ -1,2 +1,29 @@
-<video #video width="1200" height="800" autoplay="autoplay"></video>
-<canvas #canvas></canvas>
+<div class="nav">
+  <div>
+    <p-button [disabled]="!videoStop" (click)="startCamera()" class="mr"
+      >Start camera</p-button
+    >
+    <p-button [disabled]="videoStop" (click)="stopCamera()"
+      >Stop camera</p-button
+    >
+  </div>
+
+  <p-fileUpload
+    class="none"
+    #upload
+    mode="basic"
+    chooseLabel="Use image"
+    accept="image/*"
+    [multiple]="false"
+    (onSelect)="uploadImage($event)"
+  ></p-fileUpload>
+  <p-button [disabled]="!videoStop" (click)="upload.onBasicUploaderClick()"
+    >Detect from image</p-button
+  >
+</div>
+<p-divider type="solid"></p-divider>
+@if (showVideo) {
+  <div>
+    <video #video width="1200" height="800" autoplay="autoplay"></video>
+  </div>
+}
